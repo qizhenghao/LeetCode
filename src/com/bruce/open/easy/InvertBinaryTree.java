@@ -1,5 +1,7 @@
 package com.bruce.open.easy;
 
+import com.bruce.open.model.TreeNode;
+
 /**
  * Created by Administrator on 2016/7/16 0016.
  */
@@ -40,12 +42,5 @@ public class InvertBinaryTree {
         System.out.print(root.val);
         output(root.left);
         output(root.right);
-    }
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
     }
 }
