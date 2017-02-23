@@ -8,7 +8,7 @@ public class HeapSortTest {
         System.out.println("排序中——");
 //        heapSort1(data5);
 //        insertSort(data5);
-        shellSort(data5);
+//        shellSort(data5);
 		System.out.println("排序后——");
 		print(data5);
 	}
@@ -120,7 +120,7 @@ public class HeapSortTest {
     }
 
     public static void insertSort(int[] data, int dk, int n) {
-        for (int i = 1; i < data.length; i++) {
+        for (int i = dk; i < n; i++) {
             int index = i, temp = data[index];
             while (index>0) {
                 if (temp < data[index - 1]) {
