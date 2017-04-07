@@ -7,6 +7,10 @@ public class TestASCLL {
 
     public static void main(String[] args) {
 
+        int o = 0xFFFFFF01;
+        int j = ~o;
+        System.out.println(o + ", " + j);
+
         System.out.println('a');
 
         int a = 'a';
@@ -37,11 +41,11 @@ public class TestASCLL {
                 "ccccccccccccd"));
 
 
-        for (int i = 0; i < 10000; i++) {
-            System.out.print((char)i + "  ");
-            if (i % 50 ==0)
-                System.out.println();
-        }
+//        for (int i = 0; i < 10000; i++) {
+//            System.out.print((char)i + "  ");
+//            if (i % 50 ==0)
+//                System.out.println();
+//        }
     }
 
     public static String compress(String input) {
