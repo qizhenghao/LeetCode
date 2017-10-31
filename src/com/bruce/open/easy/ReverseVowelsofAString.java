@@ -28,20 +28,19 @@ public class ReverseVowelsofAString {
     private static String reverseVowels(String s) {
         char[] chars = s.toCharArray();
         int lastIndex = chars.length - 1;
+        char cI, cJ, cTemp;
         for (int i = 0; i < lastIndex; i++) {
-            char cI = chars[i];
+            cI = chars[i];
             if (cI == 'a' || cI == 'e' || cI == 'i' || cI == 'o' || cI == 'u' || cI == 'A' || cI == 'E' || cI == 'I' || cI == 'O' || cI == 'U') {
-                boolean isBreak = false;
-                for (int j = lastIndex; j > i && !isBreak; j--) {
-                    char cJ = chars[j];
-                    if (cJ == 'a' || cJ == 'e' || cJ == 'i' || cJ == 'o' || cJ == 'u' || cJ == 'A' || cJ == 'E' || cJ == 'I' || cJ == 'O' || cJ == 'U') {
-                        char cTemp = chars[i];
-                        chars[i] = chars[j];
-                        chars[j] = cTemp;
-                        lastIndex = j - 1;
-                        isBreak = true;
-                    }
+                cJ = chars[lastIndex];
+                while (!(cJ == 'a' || cJ == 'e' || cJ == 'i' || cJ == 'o' || cJ == 'u' || cJ == 'A' || cJ == 'E' || cJ == 'I' || cJ == 'O' || cJ == 'U')) {
+                    lastIndex--;
+                    cJ = chars[lastIndex];
                 }
+                cTemp = chars[i];
+                chars[i] = chars[lastIndex];
+                chars[lastIndex] = cTemp;
+                lastIndex--;
             }
         }
         return String.valueOf(chars);
