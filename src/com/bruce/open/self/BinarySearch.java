@@ -6,7 +6,7 @@ package com.bruce.open.self;
 public class BinarySearch {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{5, 7, 7, 8, 8,9 ,9};
+        int[] arr = new int[]{5, 7, 7, 8, 8, 9 ,9};
         System.out.println(binarySearch(arr, 5));
         System.out.println(biSearchFirstIndex(arr, 7));
         System.out.println(biSearchLastIndex(arr, 7));
@@ -30,19 +30,19 @@ public class BinarySearch {
         return -1;
     }
 
-    private static int biSearchFirstIndex(int[] arr, int a) {
+    private static int biSearchFirstIndex(int[] arr, int target) {
         int low = 0, high = arr.length - 1;
         int mid;
         while (low < high) {
             mid = (low + high) / 2;
-            if (arr[mid] < a) {
-                low = mid + 1;
-            } else {
+            if (target <= arr[mid]) {
                 high = mid;
+            } else {
+                low = mid + 1;
             }
         }
 
-        if (arr[low] != a) {
+        if (arr[low] != target) {
             return -1;
         } else {
             return low;

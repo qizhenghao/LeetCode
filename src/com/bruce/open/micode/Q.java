@@ -1,7 +1,7 @@
 package com.bruce.open.micode;
 
 /**
- * Created by qizhenghao on 17/10/30.
+ * Created by qizhenghao.
  */
 
 public class Q {
